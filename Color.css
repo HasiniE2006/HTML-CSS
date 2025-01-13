@@ -1,0 +1,19 @@
+<body>
+    <header>
+        <h1>My recent trip to Greece</h1>
+    </header>
+
+    <main>
+        <h2 style='color: blue;'>Overview</h2>
+        <h3>
+            
+            <!-- Update <ol> task here -->  
+            <ol style='color: red;'>
+                <li>Greece</li>
+                <li>Trip Options</li>
+                <li>Trip Itinerary</li>
+            </ol>
+        </h3>
+    </main>
+
+</body>
