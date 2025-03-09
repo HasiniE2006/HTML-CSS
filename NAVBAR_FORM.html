@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+ 6 <html lang="en">
+ 7 <head>
+ 8    <meta charset="UTF-8">
+ 9    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 10    <title>Document</title>
+ 11
+ 12    <style>
+ 13        body{
+ 14            font-family: Arial, Helvetica, sans-serif;
+ 15            margin: 0;
+ 16            padding: 0;
+ 17            background-color: rgb(226, 240, 251);
+ 18        }
+ 19        .navbar{
+ 20            display: flex;
+ 21            align-items: center;
+ 22            justify-content: center;
+ 23            background-color: white;
+ 24            gap: 30px;
+ 25            padding: 15px 30px;
+ 26            box-shadow: 0 2px 5px rgb(224, 223, 223);
+ 27            
+28        }
+ 29
+ 30        .nav-items{
+ 31            position: relative;
+ 32            font-size: 16px;
+ 33            color: black;
+ 34            text-decoration: none;
+ 35            padding: 8px 12px;
+ 36            cursor: pointer;
+ 37        }
+ 38        .dropdown{
+ 39            position: relative;
+ 40        }
+ 41        .dropdown-content{
+ 42            display: none;
+ 43            position: absolute;
+ 44            top: 100%;
+ 45            left: 0;
+ 46            background-color: white;
+ 47            min-width: 160px;
+ 48            box-shadow: 0 2px 5px rgb(224, 223, 223);
+ 49            border-radius: 5px;
+ 50            overflow: hidden;
+ 51        }
+ 07/03/2025, 20:21 navbar.html
+ localhost:50142/6910323d-f5d9-4fbd-a917-b334c5939878/ 1/4
+52        .dropdown-content a{
+ 53            display: block;
+ 54            padding: 10px;
+ 55            text-decoration: none;
+ 56            font-size: 14px;
+ 57            cursor: pointer;
+ 58            color: rgb(0, 0, 0);
+ 59        }
+ 60
+ 61        .dropdown:hover .dropdown-content{
+ 62            display: block;
+ 63        }
+ 64        .dropdown-content a:hover {
+ 65            background-color: rgb(218, 239, 255);
+ 66        }
+ 67
+ 68        .forms{
+ 69            width: 100%;
+ 70            height: 500px;
+ 71            margin-top: 100px;
+ 72            justify-content: center;
+ 73        }
+ 74        
+75        .container{
+ 76            margin-left: 100px;
+ 77            display: flex;
+ 78            width: 80%;
+ 79            background-color: white;
+ 80            padding: 20px;
+ 81            box-shadow: 0 2px 5px rgb(224, 223, 223);
+ 82            border-radius: 10px;
+ 83        }
+ 84
+ 85        .form-container, .data-container {
+ 86            width: 50%;
+ 87            padding: 20px;
+ 88            display: block;
+ 89        }
+ 90
+ 91        .form-container input{
+ 92            width: 90%;
+ 93            padding: 10px;
+ 94            margin: 10px 0;
+ 95            border-radius: 5px;
+ 96
+ 97        }
+ 98
+ 99        .form-container button{
+ 100            width: 90%;
+ 101            padding: 10px;
+ 102            background-color: rgb(54, 70, 243);
+ 103            color: white;
+ 104            border: none;
+ 105            border-radius: 5px;
+ 07/03/2025, 20:21 navbar.html
+ localhost:50142/6910323d-f5d9-4fbd-a917-b334c5939878/ 2/4
+106            cursor: pointer;
+ 107
+ 108        }
+ 109
+ 110        .data-container {
+ 111            border: 1px solid rgb(196, 194, 194);
+ 112            border-radius: 10px;
+ 113        }
+ 114
+ 115
+ 116
+ 117
+ 118
+ 119    </style>
+ 120
+ 121
+ 122 </head>
+ 123 <body>
+ 124    
+125    <nav class="navbar">
+ 126        <a href="" class="nav-items">Kilos</a>
+ 127        <a href="" class="nav-items">Mobiles</a>
+ 128
+ 129        <div class="dropdown">
+ 130            <a href="" class="nav-items">Fashion</a>
+ 131            <div class="dropdown-content">
+ 132                <a href="">Mens wear</a>
+ 133                <a href="">Mens foot wear</a>
+ 134                <a href="">Mens shirts</a>
+ 135                <a href="">Mens choes</a>
+ 136            </div>
+ 137
+ 138        </div>
+ 139        <div class="dropdown">
+ 140            <a href="" class="nav-items">Electronics</a>
+ 141            <div class="dropdown-content">
+ 142                <a href="">Cameras</a>
+ 143                <a href="">Computers</a>
+ 144                <a href="">Gaming</a>
+ 145                <a href="">Playstation</a>
+ 146            </div>
+ 147
+ 148        </div>
+ 149        <div class="dropdown">
+ 150            <a href="" class="nav-items">Home Furinishing</a>
+ 151            <div class="dropdown-content">
+ 152                <a href="">Sofas</a>
+ 153                <a href="">Beds</a>
+ 154                <a href="">Tables</a>
+ 155                <a href="">Chairs</a>
+ 156            </div>
+ 157
+ 158        </div>
+ 159        <a href="" class="nav-items">Appliances </a>
+ 07/03/2025, 20:21 navbar.html
+ localhost:50142/6910323d-f5d9-4fbd-a917-b334c5939878/ 3/4
+160        <a href="" class="nav-items">Flightbookings</a>
+ 161        <a href="" class="nav-items">Beauty</a>
+ 162
+ 163
+ 164    </nav>
+ 165    <section class="forms">
+ 166    <div class="container">
+ 167        <div class="form-container">
+ 168            <h1>Fill the form below</h1>
+ 169            <input type="text" id="name" placeholder="Enter your name">
+ 170            <input type="email" id="email" placeholder="Enter your email">
+ 171            <input type="tel" id="mobile" placeholder="Enter your mobile no">
+ 172            <input type="text" id="address" placeholder="Enter your address">
+ 173            <button onclick="submitForm()"> Submit</button>
+ 174            <p id="successMessage" style="color: green; font-weight: bold; display: none;">
+ 175                Your data submitted
+ 176            </p>
+ 177        </div>
+ 178
+ 179        <div class="data-container">
+ 180            <h1>Entered Data</h1>
+ 181            <p><b>Name:</b><span id="displayName">-</span></p>
+ 182            <p><b>Email:</b><span id="displayEmail">-</span></p>
+ 183            <p><b>Mobile Number:</b> <span id="displayMobile">-</span></p>
+ 184            <p><b>Address:</b>  <span id="displayAddress">-</span></p>
+ 185        </div>
+ 186    </div>
+ 187
+ 188    </section>
+ 189       
+190
+ 191    <script>
+ 192        function submitForm() {
+ 193            document.getElementById("displayName").textContent = 
+document.getElementById("name").value;
+ 194            document.getElementById("displayEmail").textContent = 
+document.getElementById("email").value;
+ 195            document.getElementById("displayMobile").textContent = 
+document.getElementById("mobile").value;
+ 196            document.getElementById("displayAddress").textContent = 
+document.getElementById("address").value;
+ 197
+ 198            //show success message
+ 199
+ 200            document.getElementById("successMessage").style.display="block";
+ 201        }
+ 202
+ 203
+ 204    </script>
+ 205 </body>
+ 206 </html>
