@@ -1,0 +1,129 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Full-Width Slideshow</title>
+     <style>
+         * {
+             margin: 0;
+             padding: 0;
+             box-sizing: border-box;
+         }
+        body {
+ 14            font-family: Arial, sans-serif;
+ 15        }
+ 16        .slideshow-container {
+ 17            position: relative;
+ 18            width: 100%;
+ 19            height: 500px;
+ 20            overflow: hidden;
+ 21        }
+ 22        .slides {
+ 23            display: flex;
+ 24            width: 100%; /* Assuming 3 slides */
+ 25            transition: transform 0.5s ease-in-out;
+ 26        }
+ 27        .slide {
+ 28            min-width: 100%;
+ 29            height: 500px;
+ 30        }
+ 31        .slide img {
+ 32            width: 100%;
+ 33            height: 500px;
+ 34            object-fit: cover;
+ 35            display: block;
+ 36        }
+ 37        .prev, .next {
+ 38            position: absolute;
+ 39            top: 50%;
+ 40            transform: translateY(-50%);
+ 41            background-color: rgba(0,0,0,0.5);
+ 42            color: white;
+ 43            padding: 10px;
+ 44            cursor: pointer;
+ 45            border: none;
+ 46            font-size: 18px;
+ 47        }
+ 48        .prev { left: 10px; }
+ 49        .next { right: 10px; }
+ 50        .dots {
+ 51            text-align: center;
+ 05/03/2025, 19:12 slideshow1.html
+ localhost:50328/162a4463-e2cb-4db5-a05c-d175952b699e/ 1/3
+52            position: absolute;
+ 53            bottom: 20px;
+ 54            width: 100%;
+ 55        }
+ 56        .dot {
+ 57            height: 12px;
+ 58            width: 12px;
+ 59            margin: 5px;
+ 60            background-color: #bbb;
+ 61            border-radius: 50%;
+ 62            display: inline-block;
+ 63            cursor: pointer;
+ 64        }
+ 65        .active { background-color: #717171; }
+ 66    </style>
+ 67 </head>
+ 68 <body>
+ 69    <div class="slideshow-container">
+ 70        <div class="slides">
+ 71            <div class="slide"><img src="slide 1.png" alt="Slide 1"></div>
+ 72            <div class="slide"><img src="slide 2.png" alt="Slide 2"></div>
+ 73            <div class="slide"><img src="slide 3.png" alt="Slide 3"></div>
+ 74        </div>
+ 75        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+ 76        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+ 77        <div class="dots"></div>
+ 78    </div>
+ 79    <script>
+ 80        let slideIndex = 0;
+ 81        const slides = document.querySelector(".slides");
+ 82        const dotsContainer = document.querySelector(".dots");
+ 83        
+84        function initDots() {
+ 85            for (let i = 0; i < slides.children.length; i++) {
+ 86                const dot = document.createElement("span");
+ 87                dot.classList.add("dot");
+ 88                dot.addEventListener("click", () => moveToSlide(i));
+ 89                dotsContainer.appendChild(dot);
+ 90            }
+ 91            updateDots();
+ 92        }
+ 93        
+94        function changeSlide(n) {
+ 95            slideIndex = (slideIndex + n + slides.children.length) % slides.children.length;
+ 96            updateSlide();
+ 97        }
+ 98        
+99        function moveToSlide(n) {
+ 100            slideIndex = n;
+ 101            updateSlide();
+ 102        }
+ 103        
+104        function updateSlide() {
+ 105            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+ 05/03/2025, 19:12 slideshow1.html
+ localhost:50328/162a4463-e2cb-4db5-a05c-d175952b699e/ 2/3
+106            updateDots();
+ 107        }
+ 108        
+109        function updateDots() {
+ 110            const dots = document.querySelectorAll(".dot");
+ 111            dots.forEach((dot, i) => {
+ 112                dot.classList.toggle("active", i === slideIndex);
+ 113            });
+ 114        }
+ 115        
+116        function autoSlide() {
+ 117            changeSlide(1);
+ 118            setTimeout(autoSlide, 3000);
+ 119        }
+ 120        
+121        initDots();
+ 122        setTimeout(autoSlide, 3000);
+</script>
+ </body>
+</html>
