@@ -1,0 +1,209 @@
+<html>
+    <head>
+        <style>
+            @keyframes gradientAnimation {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 10px 20px; /* Reduced vertical padding */
+                text-align: center;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+                overflow: hidden;
+                color: #333;
+                min-height: 80vh; /* Reduced min height */
+            }
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: linear-gradient(-45deg, #ee7752, #e73c7e, #23d5ab, #23a6d5);
+                background-size: 400% 400%;
+                animation: gradientAnimation 15s ease infinite;
+                z-index: -1;
+                filter: brightness(0.7);
+            }
+            .particle {
+                position: fixed;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.3);
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                z-index: -1;
+            }
+            .particle1 {
+                width: 40px;
+                height: 40px;
+                top: 10%;
+                left: 20%;
+                animation-name: move1;
+                animation-duration: 20s;
+            }
+            .particle2 {
+                width: 30px;
+                height: 30px;
+                top: 50%;
+                left: 70%;
+                animation-name: move2;
+                animation-duration: 25s;
+            }
+            .particle3 {
+                width: 50px;
+                height: 50px;
+                top: 80%;
+                left: 40%;
+                animation-name: move3;
+                animation-duration: 30s;
+            }
+            @keyframes move1 {
+                0% { transform: translate(0, 0); }
+                50% { transform: translate(20px, 30px); }
+                100% { transform: translate(0, 0); }
+            }
+            @keyframes move2 {
+                0% { transform: translate(0, 0); }
+                50% { transform: translate(-30px, 20px); }
+                100% { transform: translate(0, 0); }
+            }
+            @keyframes move3 {
+                0% { transform: translate(0, 0); }
+                50% { transform: translate(25px, -25px); }
+                100% { transform: translate(0, 0); }
+            }
+            .card {
+                background-color: white;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                padding: 20px;
+                width: 180px;
+                box-sizing: border-box;
+                transition: box-shadow 0.3s ease;
+                position: relative;
+                z-index: 1;
+            }
+            .card:hover {
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            }
+            button {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                margin-bottom: 10px;
+                border-radius: 6px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                width: 100%;
+            }
+            button:hover {
+                background-color: #45a049;
+            }
+            h1 {
+                font-size: 20px;
+                color: #333;
+                min-height: 40px;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+                margin: 0;
+            }
+            h1.fade-in {
+                opacity: 1;
+            }
+        </style>
+        <script>
+            function fadeIn(element) {
+                element.classList.remove('fade-in');
+                void element.offsetWidth; // trigger reflow
+                element.classList.add('fade-in');
+            }
+            function m(){
+                let elem = document.getElementById('m');
+                elem.innerHTML="tired=100% work=100%";
+                fadeIn(elem);
+            } 
+            function t(){
+                let elem = document.getElementById('t');
+                elem.innerHTML="tired=70% work=75%";
+                fadeIn(elem);
+            } 
+            function w(){
+                let elem = document.getElementById('w');
+                elem.innerHTML="tired=30% work=50%";
+                fadeIn(elem);
+            } 
+            function th(){
+                let elem = document.getElementById('th');
+                elem.innerHTML="tired=22% work=25%";
+                fadeIn(elem);
+            } 
+            function f(){
+                let elem = document.getElementById('f');
+                elem.innerHTML="tired=13% work=100%";
+                fadeIn(elem);
+            } 
+            function sa(){
+                let elem = document.getElementById('sa');
+                elem.innerHTML="tired=4% work=75%";
+                fadeIn(elem);
+            } 
+            function su(){
+                let elem = document.getElementById('su');
+                elem.innerHTML="tired=0% work=1000%";
+                fadeIn(elem);
+            } 
+        </script>
+    </head>
+    <body>
+        <div class="particle particle1"></div>
+        <div class="particle particle2"></div>
+        <div class="particle particle3"></div>
+        <div class="card">
+            <button onclick="m()">🌞 Monday</button>
+            <h1 id="m"></h1>
+        </div>
+        <div class="card">
+            <button onclick="t()">🌤️ Tuesday</button>
+            <h1 id="t"></h1>
+        </div>
+        <div class="card">
+            <button onclick="w()">☁️ Wednesday</button>
+            <h1 id="w"></h1>
+        </div>
+        <div class="card">
+            <button onclick="th()">🌧️ Thursday</button>
+            <h1 id="th"></h1>
+        </div>
+        <div class="card">
+            <button onclick="f()">🌈 Friday</button>
+            <h1 id="f"></h1>
+        </div>
+        <div class="card">
+            <button onclick="sa()">🌟 Saturday</button>
+            <h1 id="sa"></h1>
+        </div>
+        <div class="card">
+            <button onclick="su()">🌙 Sunday</button>
+            <h1 id="su"></h1>
+        </div>
+    </body>
