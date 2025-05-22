@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+            function a(){
+                let x=parseInt(document.getElementById("num1").value);
+                let y=parseInt(document.getElementById("num2").value);
+                document.getElementById('a').innerHTML="x is:"+x,"<br>";
+                document.getElementById('b').innerHTML="y is:"+y,"<br>";
+            }
+        </script>
+    </head>
+    <body>
+        Number1: <input type="number" placeholder="Enter num1:" id="num1"><br><br>
+        Number2:<input type="number" placeholder="Enter num1:" id="num2"><br><br>
+        <button onclick="a()">print</button>
+        <p id="a"></p>
+        <p id="b"></p>
+    </body>
+</html>
