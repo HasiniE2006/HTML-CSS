@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <style>
+            .h{
+                border-radius: 10px;
+                background-color: aliceblue;
+                color: black;
+                padding: 5px;
+            }
+            button{
+                margin: 40px;
+                margin-left: 100px;
+            }
+            h1{
+                font-size: 50px;
+            }
+        </style>
+    </head>
+    <body>
+         <center><h1 id="c">Website</h1></center>
+        <button onclick="c()" class="h">site status </button>
+        <button onclick="a()" class="h">welcome msg</button>
+        <button onclick="b()" class="h">print this page</button>
+        <script>
+           function a(){
+            alert("welcome");
+           }   
+           function b(){
+           window.print();
+           } 
+           function c(){
+            document.getElementById('c').innerHTML="official website"
+           }
+        </script>
+    </body>
+</html>
