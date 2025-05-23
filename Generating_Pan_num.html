@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <script src="Java_Script_Task_Pan_Num.js"></script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                margin: 0;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            h1 {
+                color: #333;
+                margin-bottom: 20px;
+            }
+            input[type="text"] {
+                padding: 10px;
+                margin: 10px 0;
+                width: 300px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+            }
+            button {
+                background-color: #007bff;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-top: 10px;
+                transition: background-color 0.3s ease;
+            }
+            button:hover {
+                background-color: #0056b3;
+            }
+            #panCard {
+                margin-top: 30px;
+                width: 450px;
+                height: 270px;
+                background-image: url('pan.webp');
+                background-size: cover;
+                background-position: center;
+                border-radius: 15px;
+                color: black;
+                padding: 30px 40px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+                display: none;
+                font-family: 'Arial Black', Arial, sans-serif;
+                position: relative;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            #panCard h4 {
+                margin: 0 0 10px 0;
+                font-size: 28px;
+                letter-spacing: 3px;
+                color: #000;
+                text-shadow: 1px 1px 2px #fff;
+                text-align: center;
+            }
+            #cardDetails {
+                margin-top: 20px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px 20px;
+                width: 100%;
+                padding-right: 20px;
+            }
+            .field-label {
+                font-weight: bold;
+                font-size: 12px;
+                opacity: 0.8;
+                color: #000;
+                text-shadow: 1px 1px 2px #fff;
+                margin-bottom: 1px;
+                text-align: left;
+                width: 100%;
+            }
+            .field-value {
+                font-size: 16px;
+                margin-bottom: 2px;
+                color: #000;
+                text-shadow: 1px 1px 2px #fff;
+                padding-top: 6px;
+                text-align: left;
+                width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            #cardPAN {
+                font-size: 24px;
+                font-weight: bold;
+                letter-spacing: 4px;
+                color: #000;
+                text-shadow: 2px 2px 4px #fff;
+                position: absolute;
+                bottom: 30px;
+                right: 40px;
+                max-width: 60%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding-left: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Generating PAN Card Number</h1>
+        <input type="text" id="a" placeholder="Your Name">
+        <input type="text" id="b" placeholder="Your Father's Name">
+        <input type="text" id="c" placeholder="Your Mother's Name">
+        <input type="text" id="d" placeholder="Your Aadhar Number">
+        <button onclick="a()">Generate</button>
+
+        <div id="panCard">
+            <h4>PAN CARD</h4>
+            <div id="cardDetails">
+                <div>
+                    <div class="field-label">Name</div>
+                    <div id="cardName" class="field-value"></div>
+                </div>
+                <div>
+                    <div class="field-label">Father's Name</div>
+                    <div id="cardFather" class="field-value"></div>
+                </div>
+                <div>
+                    <div class="field-label">Mother's Name</div>
+                    <div id="cardMother" class="field-value"></div>
+                </div>
+                <div>
+                    <div class="field-label">Aadhar Number</div>
+                    <div id="cardAadhar" class="field-value"></div>
+                </div>
+            </div>
+            <div id="cardPAN"></div>
+        </div>
+    </body>
+</html>
