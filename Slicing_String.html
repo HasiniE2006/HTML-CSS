@@ -1,5 +1,24 @@
 <html>
     <head>
+        <style>
+            #a{
+                border-radius: 10px;
+                background-color: rgb(162, 162, 212);
+                color: aliceblue;
+                padding: 5px;
+                
+            }
+            input{
+                padding: 20px;
+            }
+            button{
+                background-color: aqua;
+                color: azure;
+                padding: 5px;
+                margin: 10px;
+                padding: 5px;
+            }
+        </style>
         <script>
             function a(){
                 var a=document.getElementById("a").value;
@@ -8,7 +27,9 @@
         </script>
     </head>
     <body>
-        Enter String: <input type="text" id="a">
+        <center>
+        Enter String:<br><input type="text" id="a"><br>
         <button onclick="a()">click</button>
+        </center>
     </body>
 </html>
