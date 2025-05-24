@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script>
+            function a(){
+                var x=parseInt(document.getElementById("a").value);
+                for(var i=0;i<x;i++)
+            {
+                for(var j=0;j<x;j++)
+            {
+               document.write("*");
+            }
+            document.write("<br>");
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <input type="number" placeholder="num" id="a">
+        <button onclick="a()">click</button>
+    </body>
+</html>
